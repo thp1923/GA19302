@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Climbing
     uniqueID: 3377396153
+    locked: 0
+  - name: Player
+    uniqueID: 1382926983
     locked: 0
