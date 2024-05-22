@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        if (!feet.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        if (!col.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
             rig.gravityScale = stargravityscale;
             if (feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
@@ -147,9 +147,10 @@ public class PlayerController : MonoBehaviour
 
         rig.velocity = new Vector2(rig.velocity.x, moveInput.y * climspeed);
 
-        rig.gravityScale = 0;
-        if (feet.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        
+        if (col.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
+            rig.gravityScale = 0;
             if (!feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 aim.SetBool("IsJumping", false);
