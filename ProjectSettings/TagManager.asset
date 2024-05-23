@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Arrows
+  - EnemySlime
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Climbing
-  - 
+  - Arrows
   - 
   - 
   - 
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Arrows
     uniqueID: 680378781
+    locked: 0
+  - name: Enemy
+    uniqueID: 551253385
     locked: 0

@@ -6,11 +6,26 @@ public class ArrowsShoot : MonoBehaviour
 {
     
     public float lifeTime = 2f;
+    BoxCollider2D col;
     
     void Start()
     {
         
         Destroy(gameObject, lifeTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("EnemySlime"))
+        {
+            Destroy(gameObject);
+        }
+        
+
     }
 
     void Update()
