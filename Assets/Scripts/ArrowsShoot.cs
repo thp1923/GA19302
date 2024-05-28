@@ -11,7 +11,7 @@ public class ArrowsShoot : MonoBehaviour
     
     void Start()
     {
-        
+        damge = 5f;
         Destroy(gameObject, lifeTime);
     }
 
@@ -26,7 +26,7 @@ public class ArrowsShoot : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     
 
     void Update()

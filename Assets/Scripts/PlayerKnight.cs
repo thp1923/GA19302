@@ -14,7 +14,8 @@ public class PlayerKnight : MonoBehaviour
     float stargravityscale;
     bool isAlive = true;
     public GameObject bulletPrefabs;
-
+    public GameObject gameOver;
+    public GameObject HeadUp;
     public Transform FirePoint;
     public float FireRate = 0.5f;
     private float nextFireTime;
@@ -37,13 +38,33 @@ public class PlayerKnight : MonoBehaviour
 
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemySlime"))
+        {
+            Die();
+        }
+        else if (collision.gameObject.CompareTag("Gai"))
+        {
+            Die();
+        }
+
+    }
+
+
+
     void Die()
     {
-        isAlive = false;
-
-        aim.SetBool("IsDeath", true);
-        Destroy(col);
-
+        
+        FindObjectOfType<GameSession>().PlayerDeath();
+        if(FindObjectOfType<GameSession>().playerlives == 0)
+        {
+            isAlive = false;
+            HeadUp.SetActive(false);
+            aim.SetBool("IsDeath", true);
+            Destroy(col);
+            gameOver.SetActive(true);
+        }
 
 
     }
@@ -125,7 +146,7 @@ public class PlayerKnight : MonoBehaviour
 
             aim.SetBool("IsAttacking", false);
         }
-
+        
 
     }
 
@@ -207,6 +228,10 @@ public class PlayerKnight : MonoBehaviour
             {
                 aim.SetBool("IsJumping", false);
                 aim.SetBool("IsClimbing", true);
+            }
+            else if (feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {
+                aim.SetBool("IsClimbing", false);
             }
 
         }
