@@ -41,9 +41,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 1404684543
     locked: 0
@@ -53,12 +50,21 @@ TagManager:
   - name: Climbing
     uniqueID: 3377396153
     locked: 0
-  - name: Player
-    uniqueID: 1382926983
-    locked: 0
   - name: Arrows
     uniqueID: 680378781
     locked: 0
   - name: Enemy
     uniqueID: 551253385
+    locked: 0
+  - name: Bouncing
+    uniqueID: 1966473581
+    locked: 0
+  - name: Effect
+    uniqueID: 76847997
+    locked: 0
+  - name: Player
+    uniqueID: 1382926983
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

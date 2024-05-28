@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerKnight : MonoBehaviour
 {
     Vector2 moveInput;
     Rigidbody2D rig;
@@ -128,7 +128,6 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
 
     void Run()
     {

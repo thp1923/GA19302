@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlimeController : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
-    [SerializeField] float speed2 = 5f;
+    
     public Transform start;
     public Transform end;
     Rigidbody2D rig;
@@ -48,9 +48,10 @@ public class SlimeController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        var damge = new ArrowsShoot();
         if (collision.gameObject.CompareTag("Arrows"))
         {
-            health = health - 3f;
+            health = health - damge.damge;
             
             if(health <= 0)
             {

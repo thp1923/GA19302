@@ -7,6 +7,7 @@ public class ArrowsShoot : MonoBehaviour
     
     public float lifeTime = 2f;
     BoxCollider2D col;
+    public float damge = 5f;
     
     void Start()
     {
@@ -24,9 +25,9 @@ public class ArrowsShoot : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-
     }
+
+    
 
     void Update()
     {

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AttackPlayer
+  m_Name: ClimbingPlayerBow
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1235091684, guid: 3e4fbffc585e9674c9e2bf2bae28a65a, type: 3}
-    - time: 0.1
-      value: {fileID: 70854923, guid: 3e4fbffc585e9674c9e2bf2bae28a65a, type: 3}
-    - time: 0.21666667
-      value: {fileID: -1791728732, guid: 3e4fbffc585e9674c9e2bf2bae28a65a, type: 3}
-    - time: 0.31666666
-      value: {fileID: -547393150, guid: 3e4fbffc585e9674c9e2bf2bae28a65a, type: 3}
+      value: {fileID: 1174582966, guid: c06370602eefa9a4a81183b56b9bd819, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,16 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1235091684, guid: 3e4fbffc585e9674c9e2bf2bae28a65a, type: 3}
-    - {fileID: 70854923, guid: 3e4fbffc585e9674c9e2bf2bae28a65a, type: 3}
-    - {fileID: -1791728732, guid: 3e4fbffc585e9674c9e2bf2bae28a65a, type: 3}
-    - {fileID: -547393150, guid: 3e4fbffc585e9674c9e2bf2bae28a65a, type: 3}
+    - {fileID: 1174582966, guid: c06370602eefa9a4a81183b56b9bd819, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
