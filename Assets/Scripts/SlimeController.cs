@@ -51,7 +51,7 @@ public class SlimeController : MonoBehaviour
         var damge = new ArrowsShoot();
         if (collision.gameObject.CompareTag("Arrows"))
         {
-            health = health - damge.damge;
+            health = health - 5f;
             
             if(health <= 0)
             {

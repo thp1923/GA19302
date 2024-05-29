@@ -6,12 +6,11 @@ public class ArrowsShoot : MonoBehaviour
 {
     
     public float lifeTime = 2f;
-    BoxCollider2D col;
-    public float damge = 5f;
+    readonly BoxCollider2D col;
     
     void Start()
     {
-        damge = 5f;
+        
         Destroy(gameObject, lifeTime);
     }
 
