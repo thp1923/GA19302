@@ -214,12 +214,13 @@ public class PlayerKnight : MonoBehaviour
             if (feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 aim.SetBool("IsClimbing", false);
+                aim.SetBool("IsClimbing2", false);
             }
             return;
         }
 
         rig.velocity = new Vector2(rig.velocity.x, moveInput.y * climspeed);
-
+        bool haveclimb = Mathf.Abs(rig.velocity.y) > Mathf.Epsilon;
 
         if (col.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
@@ -228,10 +229,12 @@ public class PlayerKnight : MonoBehaviour
             {
                 aim.SetBool("IsJumping", false);
                 aim.SetBool("IsClimbing", true);
+                aim.SetBool("IsClimbing2", haveclimb);
             }
             else if (feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 aim.SetBool("IsClimbing", false);
+                aim.SetBool("IsClimbing2", false);
             }
 
         }
