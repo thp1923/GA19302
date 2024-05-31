@@ -55,7 +55,8 @@ public class PlayerKnight : MonoBehaviour
 
     void Die()
     {
-        
+        aim.SetBool("IsTakeDamge", true);
+        aim.SetBool("IsTakeDamge", false);
         FindObjectOfType<GameSession>().PlayerDeath();
         if(FindObjectOfType<GameSession>().playerlives == 0)
         {
@@ -132,7 +133,7 @@ public class PlayerKnight : MonoBehaviour
         {
 
             aim.SetBool("IsAttacking", true);
-
+            aim.SetFloat("Attack", 0);
             if (Input.GetKey(KeyCode.J) && Time.time >= nextFireTime)
             {
 
@@ -169,10 +170,13 @@ public class PlayerKnight : MonoBehaviour
         if (feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             aim.SetBool("IsJumping", false);
+            aim.SetFloat("Run", 0);
         }
         else
         {
             aim.SetBool("IsJumping", true);
+            aim.SetFloat("Run", 1);
+            
         }
 
 
@@ -229,12 +233,23 @@ public class PlayerKnight : MonoBehaviour
             {
                 aim.SetBool("IsJumping", false);
                 aim.SetBool("IsClimbing", true);
-                aim.SetBool("IsClimbing2", haveclimb);
+                
+                if(haveclimb == true)
+                {
+                    aim.SetFloat("Climb", 1);
+                    aim.SetBool("IsClimbing2", haveclimb);
+                }
+                else
+                {
+                    aim.SetFloat("Climb", 0);
+                }
+                
             }
             else if (feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 aim.SetBool("IsClimbing", false);
                 aim.SetBool("IsClimbing2", false);
+                
             }
 
         }

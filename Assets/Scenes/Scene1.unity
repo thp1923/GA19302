@@ -65645,6 +65645,10 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 136287588}
+    - target: {fileID: 3396536132343869039, guid: ccd1a619d5726c04aac926c0f746dfb9, type: 3}
+      propertyPath: bulletPrefabs
+      value: 
+      objectReference: {fileID: 8742037044124226509, guid: ce1cc2ce7c6a693439cc82e6aefb30b9, type: 3}
     - target: {fileID: 3818108469397949485, guid: ccd1a619d5726c04aac926c0f746dfb9, type: 3}
       propertyPath: m_Name
       value: PlayerKnight2
