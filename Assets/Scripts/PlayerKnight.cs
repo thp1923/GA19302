@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerKnight : MonoBehaviour
 {
@@ -43,19 +45,18 @@ public class PlayerKnight : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemySlime"))
         {
-            Die();
+            TakeDamge();
         }
         else if (collision.gameObject.CompareTag("Gai"))
         {
-            Die();
+            TakeDamge();
         }
 
     }
 
-
-
-    void Die()
+    void TakeDamge()
     {
+        aim.SetBool("IsTakeDamge", true);
         if (transform.localScale.x < 0)
         {
 
@@ -67,17 +68,25 @@ public class PlayerKnight : MonoBehaviour
             rig.AddForce(transform.right * -KnockBack, ForceMode2D.Force);
         }
         FindObjectOfType<GameSession>().PlayerDeath();
-        if(FindObjectOfType<GameSession>().playerlives == 0)
+        StartCoroutine(EndAnimation());
+        if (FindObjectOfType<GameSession>().playerlives == 0)
         {
-            col2.gameObject.SetActive(true);
-            isAlive = false;
-            HeadUp.SetActive(false);
-            aim.SetBool("IsDeath", true);
-            Destroy(col);
-            gameOver.SetActive(true);
+            Die();
         }
-
-
+    }
+    IEnumerator EndAnimation()
+    {
+        yield return new WaitForSecondsRealtime(0.09f);
+        aim.SetBool("IsTakeDamge", false);
+    }
+    void Die()
+    {
+        col2.gameObject.SetActive(true);
+        isAlive = false;
+        HeadUp.SetActive(false);
+        aim.SetBool("IsDeath", true);
+        Destroy(col);
+        gameOver.SetActive(true);
     }
 
     void OnMove(InputValue value)
