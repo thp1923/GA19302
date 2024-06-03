@@ -9,6 +9,7 @@ public class PlayerKnight : MonoBehaviour
     [SerializeField] float jumpspeed = 30f;
     [SerializeField] float climspeed = 15f;
     CapsuleCollider2D col;
+    public BoxCollider2D col2;
     Animator aim;
     public BoxCollider2D feet;
     float stargravityscale;
@@ -24,7 +25,7 @@ public class PlayerKnight : MonoBehaviour
     [SerializeField] float speed2 = 10f;
     [SerializeField] float jumpspeed2 = 30f;
     [SerializeField] float climspeed2 = 15f;
-
+    public float KnockBack = 0.2f;
 
     void Start()
     {
@@ -55,11 +56,20 @@ public class PlayerKnight : MonoBehaviour
 
     void Die()
     {
-        aim.SetBool("IsTakeDamge", true);
-        aim.SetBool("IsTakeDamge", false);
+        if (transform.localScale.x < 0)
+        {
+
+            rig.AddForce(transform.right * KnockBack, ForceMode2D.Force);
+        }
+        else if (transform.localScale.x > 0)
+        {
+
+            rig.AddForce(transform.right * -KnockBack, ForceMode2D.Force);
+        }
         FindObjectOfType<GameSession>().PlayerDeath();
         if(FindObjectOfType<GameSession>().playerlives == 0)
         {
+            col2.gameObject.SetActive(true);
             isAlive = false;
             HeadUp.SetActive(false);
             aim.SetBool("IsDeath", true);
