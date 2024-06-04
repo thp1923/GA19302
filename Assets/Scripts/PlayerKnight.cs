@@ -51,12 +51,17 @@ public class PlayerKnight : MonoBehaviour
         {
             TakeDamge();
         }
+        else if (collision.gameObject.CompareTag("BossAttack"))
+        {
+            TakeDamge();
+        }
 
     }
 
     void TakeDamge()
     {
         aim.SetBool("IsTakeDamge", true);
+        rig.AddForce(transform.up * 0.07f, ForceMode2D.Force);
         if (transform.localScale.x < 0)
         {
 
