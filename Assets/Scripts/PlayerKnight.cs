@@ -87,12 +87,12 @@ public class PlayerKnight : MonoBehaviour
         if (transform.localScale.x < 0)
         {
 
-            rig.AddForce(transform.right * 0.5f, ForceMode2D.Force);
+            rig.AddForce(transform.right * 0.45f, ForceMode2D.Force);
         }
         else if (transform.localScale.x > 0)
         {
 
-            rig.AddForce(transform.right * -0.5f, ForceMode2D.Force);
+            rig.AddForce(transform.right * -0.45f, ForceMode2D.Force);
         }
         FindObjectOfType<GameSession>().TakeLifeBoss();
         StartCoroutine(EndAnimation());
