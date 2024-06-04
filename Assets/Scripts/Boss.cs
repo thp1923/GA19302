@@ -45,8 +45,18 @@ public class Boss : MonoBehaviour
             isRight = -1;
         }
         transform.Translate(new Vector2(isRight * speed * Time.deltaTime, 0));
-
-        
+        var x_player = player.transform.position.x;
+        if (x_player > start && x_player < end)
+        {
+            if (x_enemy < x_player)
+            {
+                isRight = 1;
+            }
+            if (x_enemy > x_player)
+            {
+                isRight = -1;
+            }
+        }
     }
 
     void Flip()

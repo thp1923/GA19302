@@ -53,7 +53,7 @@ public class PlayerKnight : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("BossAttack"))
         {
-            TakeDamge();
+            TakeDamgeBoss();
         }
 
     }
@@ -74,11 +74,34 @@ public class PlayerKnight : MonoBehaviour
         }
         FindObjectOfType<GameSession>().PlayerDeath();
         StartCoroutine(EndAnimation());
-        if (FindObjectOfType<GameSession>().playerlives == 0)
+        if (FindObjectOfType<GameSession>().playerlives <= 0)
         {
             Die();
         }
     }
+
+    void TakeDamgeBoss()
+    {
+        aim.SetBool("IsTakeDamge", true);
+        rig.AddForce(transform.up * 0.07f, ForceMode2D.Force);
+        if (transform.localScale.x < 0)
+        {
+
+            rig.AddForce(transform.right * 0.5f, ForceMode2D.Force);
+        }
+        else if (transform.localScale.x > 0)
+        {
+
+            rig.AddForce(transform.right * -0.5f, ForceMode2D.Force);
+        }
+        FindObjectOfType<GameSession>().TakeLifeBoss();
+        StartCoroutine(EndAnimation());
+        if (FindObjectOfType<GameSession>().playerlives <= 0)
+        {
+            Die();
+        }
+    }
+
     IEnumerator EndAnimation()
     {
         yield return new WaitForSecondsRealtime(0.09f);
