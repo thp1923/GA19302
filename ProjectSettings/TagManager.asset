@@ -9,6 +9,7 @@ TagManager:
   - EnemySlime
   - Gai
   - BossAttack
+  - Boss
   layers:
   - Default
   - TransparentFX
