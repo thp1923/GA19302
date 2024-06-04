@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 817342410}
   - component: {fileID: 817342413}
   - component: {fileID: 817342414}
+  - component: {fileID: 817342415}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -310,6 +311,7 @@ MonoBehaviour:
   FirePoint: {fileID: 2034677172}
   FireRate: 0.5
   bulletPrefabs: {fileID: 5030303887392382920, guid: e8bce433151ce3d4bba9183a3ed2c038, type: 3}
+  BossLive: 100
 --- !u!50 &817342412
 Rigidbody2D:
   serializedVersion: 4
@@ -323,8 +325,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.2
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -416,6 +418,51 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 4.806957, y: 0.31398392}
+  m_EdgeRadius: 0
+--- !u!61 &817342415
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817342406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.1138315, y: -1.5158157}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.7391305, y: 3.4782608}
+    newSize: {x: 9.6875, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.39113045, y: 0.27913666}
   m_EdgeRadius: 0
 --- !u!1001 &1127988778
 PrefabInstance:
