@@ -8,6 +8,8 @@ TagManager:
   - Arrows
   - EnemySlime
   - Gai
+  - BossAttack
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Climbing
   - Arrows
   - Player
-  - Climbing
+  - 
   - 
   - 
   - 
