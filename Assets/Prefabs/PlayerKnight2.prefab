@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 5795935409626676803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18959427, y: 2.3585205, z: -9.989125}
+  m_LocalPosition: {x: -0.18959317, y: 2.35852, z: -9.989125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -257,13 +257,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3095711978781386595, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095711978781386595, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5070028321727244085, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
       propertyPath: speed
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5070028321727244085, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
       propertyPath: speed2
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5070028321727244085, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
       propertyPath: BloodEffect
