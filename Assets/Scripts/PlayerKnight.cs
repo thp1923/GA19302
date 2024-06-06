@@ -24,8 +24,11 @@ public class PlayerKnight : MonoBehaviour
     [SerializeField] float speed2 = 10f;
     [SerializeField] float jumpspeed2 = 30f;
     [SerializeField] float climspeed2 = 15f;
-
-
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -43,10 +46,12 @@ public class PlayerKnight : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemySlime"))
         {
             Die();
+            
         }
         else if (collision.gameObject.CompareTag("Gai"))
         {
             Die();
+            
         }
 
     }
@@ -55,15 +60,16 @@ public class PlayerKnight : MonoBehaviour
 
     void Die()
     {
-        
+
         FindObjectOfType<GameSession>().PlayerDeath();
-        if(FindObjectOfType<GameSession>().playerlives == 0)
+        if (FindObjectOfType<GameSession>().playerlives == 0)
         {
             isAlive = false;
             HeadUp.SetActive(false);
             aim.SetBool("IsDeath", true);
             Destroy(col);
             gameOver.SetActive(true);
+            audioManager.PlaySFX(audioManager.PlayerDeath);
         }
 
 
@@ -102,7 +108,7 @@ public class PlayerKnight : MonoBehaviour
         {
             aim.SetBool("IsJumping", true);
         }
-
+        audioManager.PlaySFX(audioManager.Jump);
     }
 
     void Update()
@@ -139,14 +145,14 @@ public class PlayerKnight : MonoBehaviour
                 Shoot();
                 nextFireTime = Time.time + FireRate;
             }
-
+            audioManager.PlaySFX(audioManager.SwordSwing);
         }
         else
         {
 
             aim.SetBool("IsAttacking", false);
         }
-        
+
 
     }
 

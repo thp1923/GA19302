@@ -10,6 +10,7 @@ TagManager:
   - Gai
   - BossAttack
   - Boss
+  - Audio
   layers:
   - Default
   - TransparentFX
