@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 5795935409626676803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18959332, y: 2.35852, z: -9.989125}
+  m_LocalPosition: {x: -0.18959236, y: 2.3585186, z: -9.989125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -277,6 +277,10 @@ PrefabInstance:
       propertyPath: BloodEffect
       value: 
       objectReference: {fileID: 2545637731936066918, guid: 277b280cbc986514692afe2f70b2acbc, type: 3}
+    - target: {fileID: 7904772580611895780, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28
+      objectReference: {fileID: 0}
     - target: {fileID: 9160082818007738477, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
       propertyPath: m_Name
       value: Player Knight

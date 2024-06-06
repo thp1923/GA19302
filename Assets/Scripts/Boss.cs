@@ -113,6 +113,7 @@ public class Boss : MonoBehaviour
         aim.SetBool("IsDeathBoss", true);
         isAlive = false;
         Destroy(cp);
+        FindObjectOfType<GameSession>().AddScore(1000);
     }
     // Update is called once per frame
     void Update()
