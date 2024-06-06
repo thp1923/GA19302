@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Boss : MonoBehaviour
     int isRight = 1;
     GameObject player;
     CapsuleCollider2D cp;
+    public Slider liveSlider;
+    public GameObject BloodEffect;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -45,8 +48,18 @@ public class Boss : MonoBehaviour
             isRight = -1;
         }
         transform.Translate(new Vector2(isRight * speed * Time.deltaTime, 0));
-
-        
+        var x_player = player.transform.position.x;
+        if (x_player > start && x_player < end)
+        {
+            if (x_enemy < x_player)
+            {
+                isRight = 1;
+            }
+            if (x_enemy > x_player)
+            {
+                isRight = -1;
+            }
+        }
     }
 
     void Flip()
@@ -72,7 +85,14 @@ public class Boss : MonoBehaviour
         else if (collision.gameObject.CompareTag("Arrows"))
         {
             BossLive = BossLive - 5;
-            if(BossLive <= 0)
+            liveSlider.value = BossLive;
+            GameObject Effect = Instantiate(BloodEffect, transform.position, transform.localRotation);
+
+            Destroy(Effect, 2);
+            aim.SetBool("IsHitBoss", true);
+            speed = 0;
+            StartCoroutine(EndAnimation());
+            if (BossLive <= 0)
             {
                 BossDie();
             }
@@ -112,6 +132,7 @@ public class Boss : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.25f);
         aim.SetBool("IsAttackBoss", false);
+        aim.SetBool("IsHitBoss", false);
         speed = speed2;
     }
 }

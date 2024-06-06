@@ -24,6 +24,10 @@ public class ArrowsShoot : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Boss"))
+        {
+            Destroy(gameObject);
+        }
     }
     
     

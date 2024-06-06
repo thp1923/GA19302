@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerKnight : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class PlayerKnight : MonoBehaviour
     [SerializeField] float jumpspeed = 30f;
     [SerializeField] float climspeed = 15f;
     CapsuleCollider2D col;
+    public BoxCollider2D col2;
     Animator aim;
     public BoxCollider2D feet;
     float stargravityscale;
@@ -24,11 +27,8 @@ public class PlayerKnight : MonoBehaviour
     [SerializeField] float speed2 = 10f;
     [SerializeField] float jumpspeed2 = 30f;
     [SerializeField] float climspeed2 = 15f;
-    AudioManager audioManager;
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
+    public float KnockBack = 0.2f;
+    public GameObject BloodEffect;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -45,34 +45,82 @@ public class PlayerKnight : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemySlime"))
         {
-            Die();
-            
+            TakeDamge();
         }
         else if (collision.gameObject.CompareTag("Gai"))
         {
-            Die();
-            
+            TakeDamge();
+        }
+        else if (collision.gameObject.CompareTag("BossAttack"))
+        {
+            TakeDamgeBoss();
         }
 
     }
 
+    void TakeDamge()
+    {
+        GameObject Effect = Instantiate(BloodEffect, transform.position, transform.localRotation);
 
+        Destroy(Effect, 2);
+        aim.SetBool("IsTakeDamge", true);
+        rig.AddForce(transform.up * 0.07f, ForceMode2D.Force);
+        if (transform.localScale.x < 0)
+        {
 
+            rig.AddForce(transform.right * KnockBack, ForceMode2D.Force);
+        }
+        else if (transform.localScale.x > 0)
+        {
+
+            rig.AddForce(transform.right * -KnockBack, ForceMode2D.Force);
+        }
+        FindObjectOfType<GameSession>().PlayerDeath();
+        StartCoroutine(EndAnimation());
+        if (FindObjectOfType<GameSession>().playerlives <= 0)
+        {
+            Die();
+        }
+    }
+
+    void TakeDamgeBoss()
+    {
+        GameObject Effect = Instantiate(BloodEffect, transform.position, transform.localRotation);
+
+        Destroy(Effect, 2);
+        aim.SetBool("IsTakeDamge", true);
+        rig.AddForce(transform.up * 0.07f, ForceMode2D.Force);
+        if (transform.localScale.x < 0)
+        {
+
+            rig.AddForce(transform.right * 0.45f, ForceMode2D.Force);
+        }
+        else if (transform.localScale.x > 0)
+        {
+
+            rig.AddForce(transform.right * -0.45f, ForceMode2D.Force);
+        }
+        FindObjectOfType<GameSession>().TakeLifeBoss();
+        StartCoroutine(EndAnimation());
+        if (FindObjectOfType<GameSession>().playerlives <= 0)
+        {
+            Die();
+        }
+    }
+
+    IEnumerator EndAnimation()
+    {
+        yield return new WaitForSecondsRealtime(0.09f);
+        aim.SetBool("IsTakeDamge", false);
+    }
     void Die()
     {
-
-        FindObjectOfType<GameSession>().PlayerDeath();
-        if (FindObjectOfType<GameSession>().playerlives == 0)
-        {
-            isAlive = false;
-            HeadUp.SetActive(false);
-            aim.SetBool("IsDeath", true);
-            Destroy(col);
-            gameOver.SetActive(true);
-            audioManager.PlaySFX(audioManager.PlayerDeath);
-        }
-
-
+        col2.gameObject.SetActive(true);
+        isAlive = false;
+        HeadUp.SetActive(false);
+        aim.SetBool("IsDeath", true);
+        Destroy(col);
+        gameOver.SetActive(true);
     }
 
     void OnMove(InputValue value)
@@ -108,7 +156,7 @@ public class PlayerKnight : MonoBehaviour
         {
             aim.SetBool("IsJumping", true);
         }
-        audioManager.PlaySFX(audioManager.Jump);
+
     }
 
     void Update()
@@ -138,21 +186,21 @@ public class PlayerKnight : MonoBehaviour
         {
 
             aim.SetBool("IsAttacking", true);
-
+            aim.SetFloat("Attack", 0);
             if (Input.GetKey(KeyCode.J) && Time.time >= nextFireTime)
             {
 
                 Shoot();
                 nextFireTime = Time.time + FireRate;
             }
-            audioManager.PlaySFX(audioManager.SwordSwing);
+
         }
         else
         {
 
             aim.SetBool("IsAttacking", false);
         }
-
+        
 
     }
 
@@ -175,10 +223,13 @@ public class PlayerKnight : MonoBehaviour
         if (feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             aim.SetBool("IsJumping", false);
+            aim.SetFloat("Run", 0);
         }
         else
         {
             aim.SetBool("IsJumping", true);
+            aim.SetFloat("Run", 1);
+            
         }
 
 
@@ -235,12 +286,24 @@ public class PlayerKnight : MonoBehaviour
             {
                 aim.SetBool("IsJumping", false);
                 aim.SetBool("IsClimbing", true);
-                aim.SetBool("IsClimbing2", haveclimb);
+                
+                if(haveclimb == true)
+                {
+                    aim.SetFloat("Climb", 1);
+                    aim.SetBool("IsClimbing2", haveclimb);
+                }
+                else
+                {
+                    aim.SetBool("IsClimbing2", false);
+                    aim.SetFloat("Climb", 0);
+                }
+                
             }
             else if (feet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 aim.SetBool("IsClimbing", false);
                 aim.SetBool("IsClimbing2", false);
+                
             }
 
         }

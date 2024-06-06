@@ -57,7 +57,15 @@ public class GameSession : MonoBehaviour
         liveSlider.value = (float)playerlives;
     }
 
+    public void TakeLifeBoss()
+    {
 
+        playerlives = playerlives - 5;//giam mang
+
+
+
+        liveSlider.value = (float)playerlives;
+    }
 
     //het mang, reset toan bo, choi lai tu dau
     public void ResetGameSession()
