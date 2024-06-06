@@ -189,7 +189,9 @@ MonoBehaviour:
   FirePoint: {fileID: 2373384683099826454}
   FireRate: 0.5
   bulletPrefabs: {fileID: 5030303887392382920, guid: e8bce433151ce3d4bba9183a3ed2c038, type: 3}
-  BossLive: 50
+  BossLive: 100
+  liveSlider: {fileID: 0}
+  BloodEffect: {fileID: 2545637731936066918, guid: 277b280cbc986514692afe2f70b2acbc, type: 3}
 --- !u!70 &1369196192693498802
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class PlayerKnight : MonoBehaviour
     [SerializeField] float jumpspeed2 = 30f;
     [SerializeField] float climspeed2 = 15f;
     public float KnockBack = 0.2f;
-
+    public GameObject BloodEffect;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -60,6 +60,9 @@ public class PlayerKnight : MonoBehaviour
 
     void TakeDamge()
     {
+        GameObject Effect = Instantiate(BloodEffect, transform.position, transform.localRotation);
+
+        Destroy(Effect, 2);
         aim.SetBool("IsTakeDamge", true);
         rig.AddForce(transform.up * 0.07f, ForceMode2D.Force);
         if (transform.localScale.x < 0)
@@ -82,6 +85,9 @@ public class PlayerKnight : MonoBehaviour
 
     void TakeDamgeBoss()
     {
+        GameObject Effect = Instantiate(BloodEffect, transform.position, transform.localRotation);
+
+        Destroy(Effect, 2);
         aim.SetBool("IsTakeDamge", true);
         rig.AddForce(transform.up * 0.07f, ForceMode2D.Force);
         if (transform.localScale.x < 0)
@@ -288,6 +294,7 @@ public class PlayerKnight : MonoBehaviour
                 }
                 else
                 {
+                    aim.SetBool("IsClimbing2", false);
                     aim.SetFloat("Climb", 0);
                 }
                 

@@ -265,6 +265,10 @@ PrefabInstance:
       propertyPath: speed2
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5070028321727244085, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
+      propertyPath: BloodEffect
+      value: 
+      objectReference: {fileID: 2545637731936066918, guid: 277b280cbc986514692afe2f70b2acbc, type: 3}
     - target: {fileID: 9160082818007738477, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
       propertyPath: m_Name
       value: Player Knight
