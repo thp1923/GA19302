@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -20,14 +21,19 @@ public class Boss : MonoBehaviour
     CapsuleCollider2D cp;
     public Slider liveSlider;
     public GameObject BloodEffect;
+    AudioManager audioManager;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
         aim = GetComponent<Animator>();
         cp = GetComponent<CapsuleCollider2D>();
+        
     }
-
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Run()
     {
         if (isAlive == false)
@@ -84,6 +90,7 @@ public class Boss : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Arrows"))
         {
+            audioManager.PlaySFX(audioManager.DevilDamage);
             BossLive = BossLive - 5;
             liveSlider.value = BossLive;
             GameObject Effect = Instantiate(BloodEffect, transform.position, transform.localRotation);

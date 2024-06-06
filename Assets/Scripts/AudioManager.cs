@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Jump;
     public AudioClip SwordSwing;
     public AudioClip PlayerDeath;
+    public AudioClip DevilDamage;
     // Start is called before the first frame update
     void Start()
     {

@@ -17,8 +17,6 @@ public class PlayerKnight : MonoBehaviour
     float stargravityscale;
     bool isAlive = true;
     public GameObject bulletPrefabs;
-    public GameObject gameOver;
-    public GameObject HeadUp;
     public Transform FirePoint;
     public float FireRate = 0.5f;
     private float nextFireTime;
@@ -121,10 +119,9 @@ public class PlayerKnight : MonoBehaviour
     {
         col2.gameObject.SetActive(true);
         isAlive = false;
-        HeadUp.SetActive(false);
         aim.SetBool("IsDeath", true);
         Destroy(col);
-        gameOver.SetActive(true);
+        FindObjectOfType<GameSession>().GameOver();
         audioManager.PlaySFX(audioManager.PlayerDeath);
     }
 

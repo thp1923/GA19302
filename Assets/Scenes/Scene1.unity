@@ -12295,32 +12295,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1650354755}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1059966989 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 818907065712635370, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-  m_PrefabInstance: {fileID: 1899485440321964252}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1059966990
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059966989}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5dc2f5435d66af04ba0695ca7e25eeed, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1073415148
 GameObject:
   m_ObjectHideFlags: 0
@@ -64468,11 +64442,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1297932547 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7840282260806549482, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-  m_PrefabInstance: {fileID: 1899485440321964252}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1298177540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64736,6 +64705,7 @@ MonoBehaviour:
   Jump: {fileID: 8300000, guid: d7224db81c4b0c541a94c679bcd194c6, type: 3}
   SwordSwing: {fileID: 8300000, guid: 1654cd6967c5c1d4094bcb00ec20ebd2, type: 3}
   PlayerDeath: {fileID: 8300000, guid: b083d49800c7c034e9dcd6d7f55a67b4, type: 3}
+  DevilDamage: {fileID: 0}
 --- !u!4 &1650354755
 Transform:
   m_ObjectHideFlags: 0
@@ -65448,10 +65418,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5959748544992462008, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: UI
-      value: 
-      objectReference: {fileID: 910344813}
     - target: {fileID: 6312704607574860065, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -65464,34 +65430,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 6513762975171350597, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513762975171350597, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513762975171350597, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1297932547}
-    - target: {fileID: 6513762975171350597, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513762975171350597, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513762975171350597, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6513762975171350597, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6580126359535973988, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
       propertyPath: m_Camera
       value: 
@@ -65500,17 +65438,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 7840282260806549482, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 818907065712635370, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1059966990}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
 --- !u!1001 &2951121594076507527
 PrefabInstance:
@@ -65637,6 +65568,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 519420032}
+    - target: {fileID: 7386737494324462278, guid: ccd1a619d5726c04aac926c0f746dfb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18959317
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
