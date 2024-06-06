@@ -29,6 +29,7 @@ public class PlayerKnight : MonoBehaviour
     [SerializeField] float climspeed2 = 15f;
     public float KnockBack = 0.2f;
     public GameObject BloodEffect;
+    AudioManager audioManager;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -38,7 +39,10 @@ public class PlayerKnight : MonoBehaviour
 
 
     }
-
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -121,6 +125,7 @@ public class PlayerKnight : MonoBehaviour
         aim.SetBool("IsDeath", true);
         Destroy(col);
         gameOver.SetActive(true);
+        audioManager.PlaySFX(audioManager.PlayerDeath);
     }
 
     void OnMove(InputValue value)
@@ -156,7 +161,7 @@ public class PlayerKnight : MonoBehaviour
         {
             aim.SetBool("IsJumping", true);
         }
-
+        audioManager.PlaySFX(audioManager.Jump);
     }
 
     void Update()
@@ -192,6 +197,7 @@ public class PlayerKnight : MonoBehaviour
 
                 Shoot();
                 nextFireTime = Time.time + FireRate;
+                audioManager.PlaySFX(audioManager.SwordSwing);
             }
 
         }
