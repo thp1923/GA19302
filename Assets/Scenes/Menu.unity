@@ -621,8 +621,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "B\xF3ng t\u1ED1i huy\u1EC1n b\xED"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1de6a9c2003c90e449bae3a3511adea9, type: 2}
-  m_sharedMaterial: {fileID: -444443905078640646, guid: 1de6a9c2003c90e449bae3a3511adea9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ece269b301ca544a94ae7130d8c67d9, type: 2}
+  m_sharedMaterial: {fileID: 2754034196824127929, guid: 7ece269b301ca544a94ae7130d8c67d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -849,8 +849,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ece269b301ca544a94ae7130d8c67d9, type: 2}
+  m_sharedMaterial: {fileID: 2754034196824127929, guid: 7ece269b301ca544a94ae7130d8c67d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1453,8 +1453,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ece269b301ca544a94ae7130d8c67d9, type: 2}
+  m_sharedMaterial: {fileID: 2754034196824127929, guid: 7ece269b301ca544a94ae7130d8c67d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

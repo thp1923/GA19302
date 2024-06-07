@@ -72,3 +72,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: CutsceneBlack
+    uniqueID: 1448889103
+    locked: 0
