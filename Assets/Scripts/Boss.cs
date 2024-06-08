@@ -22,6 +22,8 @@ public class Boss : MonoBehaviour
     public Slider liveSlider;
     public GameObject BloodEffect;
     AudioManager audioManager;
+    public Transform Portal;
+    public GameObject Win;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -114,6 +116,7 @@ public class Boss : MonoBehaviour
         isAlive = false;
         Destroy(cp);
         FindObjectOfType<GameSession>().AddScore(1000);
+        Instantiate(bulletPrefabs, FirePoint.position, FirePoint.rotation);
     }
     // Update is called once per frame
     void Update()
@@ -132,7 +135,7 @@ public class Boss : MonoBehaviour
             return;
         }
         speed = 0;
-        Instantiate(bulletPrefabs, FirePoint.position, FirePoint.rotation);
+        Instantiate(Win, Portal.position, Portal.rotation);
         //GameObject arrow = Instantiate(bulletPrefabs, FirePoint.position, Quaternion.identity);
         StartCoroutine(EndAnimation());
     }
