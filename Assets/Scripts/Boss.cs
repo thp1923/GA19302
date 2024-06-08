@@ -116,7 +116,7 @@ public class Boss : MonoBehaviour
         isAlive = false;
         Destroy(cp);
         FindObjectOfType<GameSession>().AddScore(1000);
-        Instantiate(bulletPrefabs, FirePoint.position, FirePoint.rotation);
+        Instantiate(Win, Portal.position, Portal.rotation);
     }
     // Update is called once per frame
     void Update()
@@ -135,7 +135,7 @@ public class Boss : MonoBehaviour
             return;
         }
         speed = 0;
-        Instantiate(Win, Portal.position, Portal.rotation);
+        Instantiate(bulletPrefabs, FirePoint.position, FirePoint.rotation);
         //GameObject arrow = Instantiate(bulletPrefabs, FirePoint.position, Quaternion.identity);
         StartCoroutine(EndAnimation());
     }

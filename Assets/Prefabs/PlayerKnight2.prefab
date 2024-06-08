@@ -265,6 +265,10 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 4690660854721570711, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
+      propertyPath: m_PreviewTimeScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5070028321727244085, guid: 83e9dfcfff8536242b0bd78c566a8c51, type: 3}
       propertyPath: speed
       value: 12

@@ -14,6 +14,8 @@ public class GameSession : MonoBehaviour
     public Slider liveSlider;
     public GameObject gameOver;
     public GameObject UI;
+    public GameObject Win;
+    public GameObject Boss;
 
     private void Start()
     {
@@ -108,6 +110,11 @@ public class GameSession : MonoBehaviour
     {
         Time.timeScale = 1;
     }
-
+    public void youWin()
+    {
+        UI.SetActive(false );
+        Win.SetActive(true);
+        Boss.SetActive(false);
+    }
 
 }

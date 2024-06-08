@@ -197,7 +197,7 @@ MonoBehaviour:
   liveSlider: {fileID: 0}
   BloodEffect: {fileID: 2545637731936066918, guid: 277b280cbc986514692afe2f70b2acbc, type: 3}
   Portal: {fileID: 4701709425311018579}
-  Win: {fileID: 0}
+  Win: {fileID: 757044550053695876, guid: 6e3b279cd0010a647adf26c8f6cd70b1, type: 3}
 --- !u!70 &1369196192693498802
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
