@@ -12,7 +12,7 @@ public class GameSession : MonoBehaviour
     public Slider liveSlider;
     public GameObject gameOver;
     public GameObject UI;
-    public GameObject Win;
+    
     
 
     private void Start()
@@ -73,6 +73,12 @@ public class GameSession : MonoBehaviour
         SceneManager.LoadScene(0);//load lai Scene 0
         Time.timeScale = 1;
         Destroy(gameObject); //destroy GameSession luon
+        
+    }
+    public void Play()
+    {
+        
+        Destroy(gameObject);
     }
 
     public void PlayAgain()
@@ -111,7 +117,7 @@ public class GameSession : MonoBehaviour
     public void youWin()
     {
         UI.SetActive(false);
-        Win.SetActive(true);
-           
+        SceneManager.LoadScene("Win");
+        Destroy(gameObject);
     }
 }

@@ -15,8 +15,8 @@ public class Win : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(YouWin());
-            Destroy(gameObject, 2);
+            FindObjectOfType<GameSession>().youWin();
+            Destroy(gameObject);
         }
     }
 
