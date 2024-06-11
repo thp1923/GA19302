@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
@@ -10,7 +8,7 @@ public class GameSession : MonoBehaviour
     public double playerlives = 10;
     public int score = 0;
     public TMPro.TextMeshProUGUI scoreText;
-    
+
     public Slider liveSlider;
     public GameObject gameOver;
     public GameObject UI;
@@ -20,7 +18,7 @@ public class GameSession : MonoBehaviour
     private void Start()
     {
         scoreText.text = score.ToString();
-        
+
         liveSlider.value = (float)playerlives;
     }
 
@@ -42,7 +40,7 @@ public class GameSession : MonoBehaviour
         {
             TakeLife();
         }
-        else if(playerlives == 0)
+        else if (playerlives == 0)
         {
             GameOver();
         }
@@ -53,9 +51,9 @@ public class GameSession : MonoBehaviour
     {
 
         playerlives = playerlives - 0.5;//giam mang
-        
 
-        
+
+
         liveSlider.value = (float)playerlives;
     }
 
@@ -112,9 +110,8 @@ public class GameSession : MonoBehaviour
     }
     public void youWin()
     {
-        UI.SetActive(false );
-        Win.SetActive(true);
-        Boss.SetActive(false);
+            UI.SetActive(false);
+            Win.SetActive(true);
+            Boss.SetActive(false);   
     }
-
 }
