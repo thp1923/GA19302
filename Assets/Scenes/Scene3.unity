@@ -280,6 +280,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6505683417986256339, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
+      propertyPath: m_Name
+      value: WinCanvan
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915883444625545392, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
