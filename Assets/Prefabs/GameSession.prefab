@@ -268,7 +268,6 @@ MonoBehaviour:
   gameOver: {fileID: 7694345052725788466}
   UI: {fileID: 8240467971874306299}
   Win: {fileID: 8915883444625545392}
-  Boss: {fileID: 0}
 --- !u!95 &4579164148625807358
 Animator:
   serializedVersion: 5
@@ -1936,7 +1935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6717881720203081917}
   m_Layer: 0
-  m_Name: Win
+  m_Name: WinCanvan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

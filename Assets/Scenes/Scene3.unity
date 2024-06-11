@@ -268,24 +268,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5959748544992462008, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: Boss
-      value: 
-      objectReference: {fileID: 981479049}
     - target: {fileID: 6312704607574860065, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6312704607574860065, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6505683417986256339, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_Name
-      value: WinCanvan
-      objectReference: {fileID: 0}
-    - target: {fileID: 8915883444625545392, guid: d824fefd0105b9f4aa534f1cfd9d1c38, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -576,11 +564,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &981479049 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2147634643528918548, guid: 5c6fe9eae7ba9aa489084d1a542f80fb, type: 3}
-  m_PrefabInstance: {fileID: 9072911002817261743}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1087048074
 GameObject:
   m_ObjectHideFlags: 0

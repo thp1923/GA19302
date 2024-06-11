@@ -13,7 +13,7 @@ public class GameSession : MonoBehaviour
     public GameObject gameOver;
     public GameObject UI;
     public GameObject Win;
-    public GameObject Boss;
+    
 
     private void Start()
     {
@@ -110,8 +110,8 @@ public class GameSession : MonoBehaviour
     }
     public void youWin()
     {
-            UI.SetActive(false);
-            Win.SetActive(true);
-            Boss.SetActive(false);   
+        UI.SetActive(false);
+        Win.SetActive(true);
+           
     }
 }
